@@ -1,4 +1,5 @@
 #!/bin/bash
+#https://github.com/iknowwhoim/pagemonitor
 echo "如果需要cookies，请导出cookies (Netscape Cookies格式)"
 echo "Chrome Entension https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid"
 read -p "请输入cookies的名字或绝对目录,若没有请输入0 " COOKIESDIR

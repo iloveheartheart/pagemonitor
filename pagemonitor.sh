@@ -7,11 +7,11 @@ NOCOOKIES=n
 if [ $COOKIESDIR -eq 0 ]
 then read -p "请输入想要监控的网页:" PAGE
      read -p "请输入监控频率 几分钟一次" FRE
-     wget -P $HOME -O page.old "$PAGE"
+     wget -P $HOME -O page.old "$PAGE" -q
      while true
          do 
          sleep $FRE\m
-         wget -P $HOME -O page "$PAGE"
+         wget -P $HOME -O page "$PAGE" -q
          diff page page.old
          if [ $? -eq 1 ]
              then echo "Page has changed!"
@@ -22,11 +22,11 @@ then read -p "请输入想要监控的网页:" PAGE
      done
 else read -p "请输入想要监控的网页:" PAGE
      read -p "请输入监控频率 几分钟一次" FRE
-          wget --load-cookies -P $HOME $COOKIESDIR -O page.old "$PAGE"
+          wget --load-cookies -P $HOME $COOKIESDIR -O page.old "$PAGE" -q
      while true
          do 
          sleep $FRE\m
-         wget --load-cookies -P $HOME $COOKIESDIR -O page "$PAGE"
+         wget --load-cookies -P $HOME $COOKIESDIR -O page "$PAGE" -q
          diff page page.old
          if [ $? -eq 1 ]
              then echo "Page has changed!"
